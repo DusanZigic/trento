@@ -93,6 +93,7 @@ void Collider::run_events() {
     event_.compute(*nucleusA_, *nucleusB_, nucleon_common_);
 
     // Write event data.
+    std::cout << "#";
     output_(n, b, ncoll, event_);
   }
 }
