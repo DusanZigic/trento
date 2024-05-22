@@ -119,7 +119,10 @@ std::tuple<double, int> Collider::sample_collision() {
     for (auto&& A : *nucleusA_) {
       for (auto&& B : *nucleusB_) {
         auto new_collision = nucleon_common_.participate(A, B);
-        if (new_collision && calc_ncoll_) ++ncoll;
+        if (new_collision && calc_ncoll_) {
+          ++ncoll;
+          std::cout << (A.x() + B.x()) / 2.0 << " " << (A.y() + B.y()) / 2.0 << "\n";
+        }
         collision = new_collision || collision;
       }
     }
