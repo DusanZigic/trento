@@ -52,7 +52,7 @@ void write_text_file(const fs::path& output_dir, int width, int num,
   // Open a numbered file in the output directory.
   // Pad the filename with zeros.
   std::ostringstream padded_fname{};
-  padded_fname << std::setw(width) << std::setfill('0') << num << ".dat";
+  padded_fname << num << ".dat";
   fs::ofstream ofs{output_dir / padded_fname.str()};
 
   if (header) {
